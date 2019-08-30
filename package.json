@@ -1,6 +1,6 @@
 {
   "name": "vue-sortable-tab",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/vue-sortable-tab.min.js",
   "description": "A vue sortable Tab",
   "license": "MIT",
