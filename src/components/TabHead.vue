@@ -24,6 +24,7 @@
     >
     </span>
     <i
+      v-if="closable"
       class="iconfont icon-tab_close"
       @click.stop="handleRemove">
     </i>
@@ -38,7 +39,11 @@ export default {
     value: {
       type: [String, Number],
       required: true
-    } 
+    },
+    closable: {
+      type: Boolean,
+      default: false
+    }
   },
 
   computed: {
@@ -89,6 +94,9 @@ export default {
 
     &:hover {
       cursor: pointer;
+      &::before {
+        content: "\e7e6";
+      }
     }
   }
 

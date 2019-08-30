@@ -13,7 +13,10 @@
         </div>
       </div>
       <div class="k-tab-head-operate">
-        <tab-add @add="$emit('add')" />
+        <tab-add
+          @add="$emit('add')"
+          v-show="addable"
+        />
         <tab-offset
           v-show="isScroll"
           @left="scrollToLeft"
@@ -44,6 +47,18 @@ export default {
     lists: {
       type: Array,
       required: true
+    },
+    addable: {
+      type: Boolean,
+      default: false
+    },
+    closable: {
+      type: Boolean,
+      default: false
+    },
+    isSortabled: {
+      type: Boolean,
+      default: false
     }
   },
 
@@ -59,6 +74,10 @@ export default {
   watch: {
     value(value) {
       this.setCurrentValue(value)
+    },
+    isSortabled() {
+      this.destroySort()
+      this.initSort()
     }
   },
 
@@ -103,7 +122,15 @@ export default {
       $dom.scrollLeft = offset;
     },
 
+    destroySort() {
+      if (this.sortable) {
+        this.sortable.destroy()
+        this.sortable = null
+      }
+    },
+
     initSort() {
+      if (!this.isSortabled) return
       const $dom = this.$refs.sortWrap
       if (!$dom) return
       this.sortable = new Sortable($dom, {
@@ -149,10 +176,7 @@ export default {
 
   destroyed() {
     this.erd = null
-    if (this.sortable) {
-      this.sortable.destroy()
-      this.sortable = null
-    }
+    this.destroySort()
   }
 }
 </script>
