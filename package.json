@@ -1,0 +1,41 @@
+{
+  "name": "vue-sortable-tab",
+  "version": "1.0.0",
+  "main": "dist/vue-sortable-tab.min.js",
+  "description": "A vue sortable Tab",
+  "license": "MIT",
+  "author": "Kylin <mrkylin.zhou@gmail.com>",
+  "keywords": [
+    "vue",
+    "sortable",
+    "tab"
+  ],
+  "scripts": {
+    "build": "./node_modules/.bin/webpack --display-error-details --config ./build/webpack.js"
+  },
+  "dependencies": {
+    "@shopify/draggable": "1.0.0-beta.5",
+    "element-resize-detector": "^1.1.15",
+    "lodash": "^4.17.15",
+    "vue": "^2.6.10"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-0",
+    "autoprefixer": "^9.6.1",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
+    "sass": "^1.22.10",
+    "sass-loader": "^8.0.0",
+    "url-loader": "^2.1.0",
+    "vue-loader": "^15.7.1",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.7"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  }
+}
