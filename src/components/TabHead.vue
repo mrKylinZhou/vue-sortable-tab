@@ -55,9 +55,7 @@ export default {
     },
 
     handleRemove() {
-      if (isFunction(this.$parent.tabRemove)) {
-        this.$parent.tabRemove(this.value);
-      }
+      this.$emit('close')
     }
   }
 }
