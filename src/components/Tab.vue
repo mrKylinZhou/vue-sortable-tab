@@ -180,6 +180,7 @@ export default {
   }
 }
 </script>
+
 <style lang="scss">
 .k-tab{
   height: 100%;

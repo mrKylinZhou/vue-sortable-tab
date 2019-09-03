@@ -13,7 +13,7 @@
   </div>
 </template>
 
-<style>
+<style lang="scss">
 .k-tab-offset-control {
   font-size: 12px;
   width: 42px;

@@ -23,7 +23,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 .k-tab-content {
   width: 100%;
   height: 100%;

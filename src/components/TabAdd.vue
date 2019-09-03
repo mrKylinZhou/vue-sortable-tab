@@ -5,7 +5,7 @@
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .k-tab-add-btn {
   cursor: pointer;
   display: block;
