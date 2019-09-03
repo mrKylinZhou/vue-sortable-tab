@@ -32,7 +32,6 @@
 
 <script>
 import { Sortable } from '@shopify/draggable'
-import ElementResize from 'element-resize-detector'
 import { cloneDeep } from 'lodash'
 
 import TabAdd from './TabAdd'
@@ -90,11 +89,11 @@ export default {
     initListenScroll() {
       const $dom = this.$refs.sortWrap
       if (!$dom) return
-      this.erd = new ElementResize()
-      this.erd.listenTo($dom, () => {
-          const { scrollWidth, clientWidth } = $dom
-          this.isScroll = scrollWidth > clientWidth
+       this.erd = new ResizeObserver(e => {
+        const { scrollWidth, clientWidth } = $dom
+        this.isScroll = scrollWidth > clientWidth
       })
+      this.erd.observe($dom)
     },
 
     scrollToLeft() {
