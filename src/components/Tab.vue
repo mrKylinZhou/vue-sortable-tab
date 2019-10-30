@@ -2,12 +2,12 @@
   <div class="k-tab">
     <div
       class="k-tab-head"
-      :class="{ 'is-scroll': isScroll }"  
+      :class="{ 'is-scroll': isScroll }" 
     >
       <div class="k-tab-head-scroll">
         <div
           class="k-tab-head-item-wrap"
-          ref="sortWrap"
+          ref="sortWrap" 
         >
           <slot name="head"></slot>
         </div>
@@ -91,7 +91,7 @@ export default {
       new ResizeObserver(() => {
         const { scrollWidth, clientWidth } = $dom
         this.isScroll = scrollWidth - 6 > clientWidth
-      })
+      }).observe($dom)
     },
 
     scrollToLeft() {
@@ -146,12 +146,9 @@ export default {
         const cacheLists = cloneDeep(this.lists)
         const spliceItem = cacheLists.splice(oldIndex, 1)[0]
         cacheLists.splice(newIndex, 0, spliceItem)
-        cacheLists.forEach((item, i) => {
-          this.lists[i] = item
-        });
         this.$emit('sorted', {
           moveItem: moveItem,
-          lists: this.lists
+          lists: cacheLists
         })
       })
     },
