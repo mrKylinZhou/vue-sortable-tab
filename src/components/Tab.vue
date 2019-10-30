@@ -65,7 +65,6 @@ export default {
     return {
       currentValue: this.value,
       sortable: null,
-      erd: null,
       isScroll: false
     }
   },
@@ -89,11 +88,10 @@ export default {
     initListenScroll() {
       const $dom = this.$refs.sortWrap
       if (!$dom) return
-       this.erd = new ResizeObserver(e => {
+      new ResizeObserver(() => {
         const { scrollWidth, clientWidth } = $dom
-        this.isScroll = scrollWidth > clientWidth
+        this.isScroll = scrollWidth - 6 > clientWidth
       })
-      this.erd.observe($dom)
     },
 
     scrollToLeft() {
@@ -174,7 +172,6 @@ export default {
   },
 
   destroyed() {
-    this.erd = null
     this.destroySort()
   }
 }
