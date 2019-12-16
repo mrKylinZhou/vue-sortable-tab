@@ -32,7 +32,7 @@
 </template>
 
 <script lang="ts">
-import { isFunction } from 'lodash'
+import isFunction from 'lodash/isFunction'
 
 export default {
   props: {

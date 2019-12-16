@@ -32,7 +32,7 @@
 
 <script>
 import { Sortable } from '@shopify/draggable'
-import { cloneDeep } from 'lodash'
+import cloneDeep from 'lodash/cloneDeep'
 
 import TabAdd from './TabAdd'
 import TabOffset from './TabOffset'
