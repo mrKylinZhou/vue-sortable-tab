@@ -11,7 +11,7 @@
     "tab"
   ],
   "scripts": {
-    "build": "./node_modules/.bin/webpack --display-error-details --config ./build/webpack.js"
+    "build": "npx webpack --display-error-details --config ./build/webpack.js"
   },
   "dependencies": {
     "@shopify/draggable": "1.0.0-beta.5",
@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-0",
+    "@babel/preset-env": "^7.7.6",
     "autoprefixer": "^9.6.1",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.2.0",
